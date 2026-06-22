@@ -34,15 +34,18 @@ async function run() {
       const targetDir = join(currentDir, folderName);
       console.log(`📦 Installing packages in: ${folderName}...`);
 
-      // Spawn 'bun install' using Bun's native API
-      const proc = Bun.spawn(["bun", "install"], {
+      // Spawn commands using bun's native's API
+      await Bun.spawn(["bun", "install"], {
         cwd: targetDir,
         stdout: "inherit", 
         stderr: "inherit",
-      });
+      }).exited;
+      await Bun.spawn(["bun", "update"], {
+        cwd: targetDir,
+        stdout: "inherit", 
+        stderr: "inherit",
+      }).exited;
 
-      // Wait for the process to complete
-      await proc.exited;
       console.log("------------------------------------");
     }
 
