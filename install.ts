@@ -40,11 +40,11 @@ async function run() {
         stdout: "inherit", 
         stderr: "inherit",
       }).exited;
-      await Bun.spawn(["bun", "update"], {
-        cwd: targetDir,
-        stdout: "inherit", 
-        stderr: "inherit",
-      }).exited;
+      // await Bun.spawn(["bun", "update"], {
+      //   cwd: targetDir,
+      //   stdout: "inherit", 
+      //   stderr: "inherit",
+      // }).exited;
 
       console.log("------------------------------------");
     }
