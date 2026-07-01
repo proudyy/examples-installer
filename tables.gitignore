@@ -1,0 +1,2 @@
+# Hint: Copy this file to your project tables examples root folder and rename it to .gitignore to ignore created bun.lock files
+*/bun.lock
